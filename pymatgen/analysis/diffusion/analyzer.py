@@ -587,12 +587,12 @@ class DiffusionAnalyzer(MSONable):
             plt.plot(plot_dt, self.msd_components[:, 2], "b")
             plt.legend(["Overall", "a", "b", "c"], loc=2, prop={"size": 20})
 
-        plt.xlabel(f"Timestep ({unit})")
+        plt.set_xlabel(f"Timestep ({unit})")
         if mode == "mscd":
-            plt.ylabel("MSCD ($\\AA^2$)")
+            plt.set_ylabel("MSCD ($\\AA^2$)")
         else:
-            plt.ylabel("MSD ($\\AA^2$)")
-        plt.tight_layout()
+            plt.set_ylabel("MSD ($\\AA^2$)")
+        plt.figure.tight_layout()
         return plt
 
     def plot_msd(self, mode="default"):
